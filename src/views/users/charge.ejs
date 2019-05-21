@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <% include ../static/partials/head.ejs %>
+        <script src="https://checkout.stripe.com/checkout.js"></script>
+    </head>
+    <body>
+        <% include ../static/partials/navbar.ejs %>
+        <main>
+            <hr>
+            <hr>
+            <hr>
+            <h2>Upgrade to Premium Plan</h2>
+            <div id="shop">
+                    <form action='/users/charge' method="POST">
+                        <script
+                          src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                          data-key="<%= keyPublishable %>"
+                          data-amount="1500"
+                          data-name="Sharepedia"
+                          data-description="premium account"
+                          data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+                          data-locale="auto"
+                          data-zip-code="true">
+                        </script>
+                </form>
+                    
+                  
+            </div>
+        </main>
+
+
+
+
+        <% include ../static/partials/baseScripts.ejs %>
+    </body>
+    
+</html>
